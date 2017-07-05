@@ -1,0 +1,25 @@
+---
+title: "prueba_googleVis"
+output:
+  html_document: default
+  word_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r setOptions, message=FALSE}
+library(googleVis)
+op <- options(gvis.plot.tag='chart')
+```
+
+```{r results='asis'}
+M <- gvisMotionChart(Fruits, "Fruit", "Year",
+options=list(width=550, height=450))
+#print(M, 'chart')
+M
+```
